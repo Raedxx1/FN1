@@ -51,7 +51,7 @@
     </title>
     <script>
         function loadcomplete() {
-            document.getElementById("progress").innerHTML = sessionStorage.Queue + " Loaded Successfully !!";
+            document.getElementById("progress").innerHTML = sessionStorage.Queue + " تمت بنجاح !!";
             sessionStorage.Queue = "";
         }
     </script>
@@ -63,26 +63,11 @@
 </head>
 
 <body class="bg">
-    <script>
-        window.onload = function(e) {
-            if (sessionStorage.Queue == null) {
-                sessionStorage.Queue = "";
-            } else if (sessionStorage.Queue != "") {
-                executependingqueue(sessionStorage.Queue);
-            }
-        };
-        window.applicationCache.ondownloading = function() {
-            document.getElementById("progress").innerHTML = "Page Caching Started!!"
-        };
-        window.applicationCache.onprogress = function(a) {
-            document.getElementById("progress").innerHTML = "Caching Status: " + (Math.round(100 * (a.loaded / a.total))) + "% Completed"
-        };
-        window.applicationCache.oncached = function() {
-            document.getElementById("progress").innerHTML = "Page Cached Successfully!!";
-            setTimeout(function() {
-                document.getElementById("progress").innerHTML = "Turn Off the Internet & Reopen the Page to Run the Exploit!!";
-            }, 1500);
-        };
+        <script>
+         window.onload = function(e){if(sessionStorage.Queue==null){sessionStorage.Queue="";}else if(sessionStorage.Queue!=""){executependingqueue(sessionStorage.Queue);}};
+         window.applicationCache.ondownloading=function(){document.getElementById("progress").innerHTML="حفظ الصفحة بدأ!!"};
+         window.applicationCache.onprogress=function(a){document.getElementById("progress").innerHTML="حالة الحفظ: "+(Math.round(100*(a.loaded/a.total)))+"% اكتمل"};
+         window.applicationCache.oncached=function(){document.getElementById("progress").innerHTML="تم حفظ الصفحة بنجاح";setTimeout(function(){document.getElementById("progress").innerHTML="قم بإطفاء الانترنت واعد فتح الصفحة!!"; }, 1500);};
     </script>
     <h1 id="progress" class="titlehead">تهكير فن التقنية9.00</h1>
     <hr><br>

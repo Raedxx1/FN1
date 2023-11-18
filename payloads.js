@@ -25,7 +25,7 @@ function executependingqueue(pl) {
         fanthreshold(localStorage.temp);
     } else if (pl == "FTP") {
         ftp();
-    } else if (pl == "GoldHEN V2b") {
+    } else if (pl == "goldhen") {
         goldhen();
     } else if (pl == "History Blocker") {
         historyblocker();
